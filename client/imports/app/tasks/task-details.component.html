@@ -1,0 +1,22 @@
+<div class="task-details-container" *ngIf="task">
+    <div class="row">
+        <div class="task-details">
+            <md-card>
+                <h2>{{ task.name }}</h2>
+                <form layout="column" (submit)="saveTask()">
+                    <label>Task Name: </label>
+                    <md-input [(ngModel)]="task.name" name="name"></md-input>
+                    <br />
+                    <md-checkbox [(checked)]="task.done" name="done" aria-label="Public">
+                        Task done?
+                    </md-checkbox>
+
+                    <div layout="row" layout-align="left">
+                        <button type="submit" md-raised-button color="accent">Save</button>
+                        <a [routerLink]="['/']" md-raised-button class="md-raised">Back</a>
+                    </div>
+                </form>
+            </md-card>
+        </div>
+    </div>
+</div>

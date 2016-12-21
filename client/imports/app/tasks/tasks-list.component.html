@@ -1,0 +1,28 @@
+<tasks-form></tasks-form>
+
+<md-card class="filter-card">
+    <h3>Filter Tasks</h3>
+    <form>
+        By name:
+        <md-input dividerColor="primary" type="text" #searchtext placeholder="Enter name"></md-input>
+        <button md-button (click)="search(searchtext.value)">Find</button>
+        <br /> Sort by name:
+        <select class="form-control" #sort (change)="changeSortOrder(sort.value)">
+          <option value="1" selected>Ascending</option>
+          <option value="-1">Descending</option>
+        </select>
+    </form>
+</md-card>
+
+<pagination-controls class="pagination" (pageChange)="onPageChanged($event)"></pagination-controls>
+
+<md-list class="app-list md2 md-list">
+    <md-list-item *ngFor="let task of tasks | async">
+        <a [routerLink]="['/task', task._id]">{{task.name}}</a>
+        <input type="checkbox" [checked]="task.done" (change)="task.done = !task.done" />
+        <button class="remove-task" md-icon-button (click)="removeTask(task)">
+        <md-icon class="md-24">X</md-icon>
+      </button>
+    </md-list-item>
+</md-list>
+<pagination-controls class="pagination" (pageChange)="onPageChanged($event)"></pagination-controls>
