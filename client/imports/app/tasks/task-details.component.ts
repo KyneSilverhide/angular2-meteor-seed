@@ -1,11 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 import { Meteor } from 'meteor/meteor';
 import { MeteorObservable } from 'meteor-rxjs';
 import { InjectUser } from "angular2-meteor-accounts-ui";
-import { MouseEvent } from "angular2-google-maps/core";
 
 import 'rxjs/add/operator/map';
 
@@ -15,7 +14,7 @@ import { Users } from '../../../../both/collections/users.collection';
 import { User } from '../../../../both/models/user.model';
 
 import template from './task-details.component.html';
-import style from './task-details.component.scss';
+import style from './task.component.scss';
 
 @Component({
     selector: 'task-details',
@@ -30,9 +29,7 @@ export class TaskDetailsComponent implements OnInit, OnDestroy {
     taskSub: Subscription;
     user: Meteor.User;
 
-    constructor(
-        private route: ActivatedRoute
-    ) { }
+    constructor(private route: ActivatedRoute, private router:Router) { }
 
     ngOnInit() {
         this.paramsSub = this.route.params
@@ -63,7 +60,7 @@ export class TaskDetailsComponent implements OnInit, OnDestroy {
                 name: this.task.name,
                 done: this.task.done
             }
-        });
+        }).subscribe(this.router.navigate(['/']));
     }
 
     dummy() {

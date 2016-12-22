@@ -3,9 +3,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Accounts } from 'meteor/accounts-base';
 import template from './signup.component.html';
+import style from './auth.component.scss';
 
 @Component({
   selector: 'signup',
+  styles: [style],
   template
 })
 export class SignupComponent implements OnInit {

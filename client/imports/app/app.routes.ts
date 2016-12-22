@@ -5,7 +5,7 @@ import { TasksListComponent } from './tasks/tasks-list.component';
 import { TaskDetailsComponent } from './tasks/task-details.component';
 import {SignupComponent} from "./auth/signup.component";
 import {RecoverComponent} from "./auth/recover.component";
-import {LoginComponent} from "./auth/login.component.web";
+import {LoginComponent} from "./auth/login.component";
 
 export const routes: Route[] = [
     { path: '', component: TasksListComponent },

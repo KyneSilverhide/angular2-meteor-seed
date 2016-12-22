@@ -3,7 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Tasks } from '../../../../both/collections/tasks.collection';
 import { InjectUser } from "angular2-meteor-accounts-ui";
 import template from './tasks-form.component.html';
-import style from './tasks-form.component.scss';
+import style from './task.component.scss';
 
 @Component({
     selector: 'tasks-form',
@@ -34,7 +34,7 @@ export class TasksFormComponent implements OnInit {
         if (this.addForm.valid) {
             Tasks.insert({
                 name: this.addForm.value.name,
-                done: this.addForm.value.done
+                done: false
             });
 
             this.addForm.reset();

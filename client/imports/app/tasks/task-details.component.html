@@ -1,22 +1,20 @@
-<div class="task-details-container" *ngIf="task">
-    <div class="row">
-        <div class="task-details">
-            <md-card>
-                <h2>{{ task.name }}</h2>
-                <form layout="column" (submit)="saveTask()">
-                    <label>Task Name: </label>
-                    <md-input [(ngModel)]="task.name" name="name"></md-input>
-                    <br />
-                    <md-checkbox [(checked)]="task.done" name="done" aria-label="Public">
+<div class="flex-container" layout="row">
+    <div class="flex-item" flex="20"></div>
+    <div class="flex-item" flex="60">
+        <md-card class="main-card filter-card" *ngIf="task">
+            <form (submit)="saveTask()">
+                <md-card-title>{{ task.name }}</md-card-title>
+                <md-card-content layout="column">
+                    <md-input [(ngModel)]="task.name" name="name" placeholder="Task name"></md-input>
+                    <md-checkbox [(ngModel)]="task.done" name="done" aria-label="Done">
                         Task done?
                     </md-checkbox>
-
-                    <div layout="row" layout-align="left">
-                        <button type="submit" md-raised-button color="accent">Save</button>
-                        <a [routerLink]="['/']" md-raised-button class="md-raised">Back</a>
-                    </div>
-                </form>
-            </md-card>
-        </div>
+                </md-card-content>
+                <md-card-actions layout="row">
+                    <a [routerLink]="['/']" md-button class="md-raised">Back</a>
+                    <button type="submit" md-raised-button color="accent">Save</button>
+                </md-card-actions>
+            </form>
+        </md-card>
     </div>
 </div>

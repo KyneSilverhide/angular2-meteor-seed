@@ -4,9 +4,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { AccountsModule } from 'angular2-meteor-accounts-ui';
 import { Ng2PaginationModule } from 'ng2-pagination';
-import { AgmCoreModule } from 'angular2-google-maps/core';
 
-import { AppComponent } from "./app.component.web";
+import { AppComponent } from "./app.component";
 import { routes, ROUTES_PROVIDERS } from './app.routes';
 import { TASKS_DECLARATIONS } from './tasks';
 import { SHARED_DECLARATIONS } from './shared';
@@ -21,9 +20,6 @@ let moduleDefinition = {
         RouterModule.forRoot(routes),
         AccountsModule,
         Ng2PaginationModule,
-        AgmCoreModule.forRoot({
-            apiKey: 'AIzaSyAWoBdZHCNh5R-hB5S5ZZ2oeoYyfdDgniA'
-        }),
         MaterialModule.forRoot()
     ],
     declarations: [

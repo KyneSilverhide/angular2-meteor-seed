@@ -1,22 +1,9 @@
-<div class="form-container">
-    <div class="container-background">
-        <div class="form-content">
-            <div class="form-center">
-                <form *ngIf="user" [formGroup]="addForm" (ngSubmit)="addTask();">
-                    <div style="display: table-row">
-                        <div class="form-inputs">
-                            <md-input dividerColor="accent" formControlName="name" placeholder="Task name"></md-input>
-                            <br/>
-                            <md-checkbox formControlName="done">Done?</md-checkbox>
-                            <br/>
-                            <button color="accent" md-raised-button type="submit">Add my task!</button>
-                        </div>
-                    </div>
-                </form>
-                <div *ngIf="!user">
-                    Please login in order to create new tasks!
-                </div>
-            </div>
-        </div>
+<form *ngIf="user" [formGroup]="addForm" (ngSubmit)="addTask();" autocomplete="off">
+    <div class="form-inputs">
+        <md-input dividerColor="accent" formControlName="name" placeholder="What should I do next?"></md-input>
+        <button color="accent" md-fab type="submit"><md-icon class="button-icon">add</md-icon></button>
     </div>
+</form>
+<div *ngIf="!user">
+    <md-icon>warning</md-icon> Please login in order to create new tasks!
 </div>
