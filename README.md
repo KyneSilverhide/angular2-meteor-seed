@@ -84,3 +84,38 @@ This is based on the Angular2 Meteor Tutorial : https://angular-meteor.com/tutor
   }
 }
 ```
+
+# Docker image
+If you are familiar with Docker, you can simply build a docker image and deploy it in production.
+I've already atatched the proper `Dockerfile`, so you just have to run these commands (inside this application folder)
+```
+docker build -t yourname/your-app-name .
+```
+
+Then, you can push your image to the Docker hub (you need an account at https://hub.docker.com/) and pull it on your production server.
+Start by sign in into Docker Hub
+```
+docker login
+```
+Then, push your image
+```
+docker push yourname/your-app-name
+```
+
+Finally, on the production server (you may need to use `sudo`)
+```
+docker login
+docker pull yourname/your-app-name
+docker run -d -e ROOT_URL=http://example.com -e MONGO_URL=mongodb://url -e MONGO_OPLOG_URL=mongodb://oplog_url -p 80:3000 yourname/your-app-name
+```
+
+If you are using the MongoDb inside a Docker container, prefix the MONGO_URL part with
+```
+--link mongo:mongo -e MONGO_URL=mongodb://mongo
+```
+
+
+# Demo
+A demo of this application can be seen here : http://ns352915.ovh.net:8082/.
+Please excuse me if the website is down, I'll try to keept it up as much as possible.
+
