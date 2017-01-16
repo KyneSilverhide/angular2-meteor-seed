@@ -1,7 +1,7 @@
 **Table of Contents**
 
 - [Introduction](#Introduction)
-	- [Includes :](#Includes-)
+	- [Includes :](#Includes)
 - [Installation](#)
 - [Typescript configuration](#Installation)
 	- [Atom (default file)](#Typescript-configuration)
@@ -9,9 +9,11 @@
 - [Docker image](#Docker-image)
 - [Demo](#Demo)
 
+<a name="Introduction"/>
 # Introduction
 This repository is a seed to start an Angular2 meteor project with authentication, pagination and Angular2 Material.
 
+<a name="Includes"/>
 ## Includes :
 * Meteor 1.4.2
 * Angular 2
@@ -23,6 +25,7 @@ This repository is a seed to start an Angular2 meteor project with authenticatio
 * Working code to search tasks by name
 * Working code to sort tasks alphabetically (on server side)
 
+<a name="Installation"/>
 # Installation
 Clone this repository
 ```
@@ -41,6 +44,7 @@ meteor
 
 You can now access it at http://localhost:3000
 
+<a name="Typescript-configuration"/>
 # Typescript configuration
 ## Atom (default file)
 In Atom, install the "atom-typescript" package
@@ -66,6 +70,7 @@ This will automatically fill this base file, but you probably don't need to chan
 }
 ```
 
+<a name="Other-IDEs"/>
 ## Other IDEs 
 This is based on the Angular2 Meteor Tutorial : https://angular-meteor.com/tutorials/socially/angular2/bootstrap
 ```
@@ -96,6 +101,7 @@ This is based on the Angular2 Meteor Tutorial : https://angular-meteor.com/tutor
 }
 ```
 
+<a name="Docker-image"/>
 # Docker image
 If you are familiar with Docker, you can simply build a docker image and deploy it in production.
 I've already atatched the proper `Dockerfile`, so you just have to run these commands (inside this application folder)
@@ -125,7 +131,7 @@ If you are using the MongoDb inside a Docker container, prefix the MONGO_URL par
 --link mongo:mongo -e MONGO_URL=mongodb://mongo
 ```
 
-
+<a name="Demo"/>
 # Demo
 A demo of this application can be seen here : http://ns352915.ovh.net:8082/.
 Please excuse me if the website is down, I'll try to keept it up as much as possible.
