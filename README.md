@@ -1,13 +1,13 @@
 **Table of Contents**
 
-- [Introduction](#)
-	- [Includes :](#)
+- [Introduction](#Introduction)
+	- [Includes :](#Includes-)
 - [Installation](#)
-- [Typescript configuration](#)
-	- [Atom (default file)](#)
-	- [Other IDEs](#)
-- [Docker image](#)
-- [Demo](#)
+- [Typescript configuration](#Installation)
+	- [Atom (default file)](#Typescript-configuration)
+	- [Other IDEs](#Other-IDEs)
+- [Docker image](#Docker-image)
+- [Demo](#Demo)
 
 # Introduction
 This repository is a seed to start an Angular2 meteor project with authentication, pagination and Angular2 Material.
