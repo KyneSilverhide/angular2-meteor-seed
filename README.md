@@ -7,7 +7,6 @@
 	- [Atom (default file)](#Typescript-configuration)
 	- [Other IDEs](#Other-IDEs)
 - [Docker image](#Docker-image)
-- [Demo](#Demo)
 
 <a name="Introduction"/>
 
@@ -137,9 +136,5 @@ If you are using the MongoDb inside a Docker container, prefix the MONGO_URL par
 --link mongo:mongo -e MONGO_URL=mongodb://mongo
 ```
 
-<a name="Demo"/>
 
-# Demo
-A demo of this application can be seen here : http://ns352915.ovh.net:8082/.
-Please excuse me if the website is down, I'll try to keept it up as much as possible.
 
